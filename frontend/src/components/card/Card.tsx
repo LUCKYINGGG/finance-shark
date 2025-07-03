@@ -1,4 +1,6 @@
 import React from "react";
+import { JSX } from "react";
+
 import "./Card.css";
 
 interface Props {
@@ -7,12 +9,18 @@ interface Props {
   price: number;
 }
 
-const Card = ({companyName, ticker, price}: Props) => {
+const Card: React.FC<Props> = ({
+  companyName,
+  ticker,
+  price,
+}: Props): JSX.Element => {
   return (
     <div className="card">
       <img src="\favicon.ico" alt="Test" />
       <div className="details">
-        <h2>{companyName} ({ticker})</h2>
+        <h2>
+          {companyName} ({ticker})
+        </h2>
         <p>${price}</p>
         <p className="infor">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam
